@@ -1,0 +1,20 @@
+{
+  "application": {
+    "name": {
+      "executable": "8",
+      "display": "Automate",
+      "internal": "automate"
+    },
+    "path": "/usr/src",
+    "theme": "default",
+    "version": "0.1"
+  },
+  "build": {
+    "cache": true,
+    "debug": false
+  },
+  "qt": {
+    "path": "/opt/qt",
+    "version": "6.2.2"
+  }
+}

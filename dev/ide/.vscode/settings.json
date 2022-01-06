@@ -1,0 +1,58 @@
+{
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "clang-format.fallbackStyle": "Google",
+  "clang-tidy.checks": [
+    "-*",
+    "bugprone-*",
+    "cert-dcl21-cpp",
+    "cert-dcl50-cpp",
+    "cert-env33-c",
+    "cert-err34-c",
+    "cert-err52-cpp",
+    "cert-err60-cpp",
+    "cert-flp30-c",
+    "cert-msc50-cpp",
+    "cert-msc51-cpp",
+    "cppcoreguidelines-*",
+    "-cppcoreguidelines-macro-usage",
+    "-cppcoreguidelines-pro-type-reinterpret-cast",
+    "-cppcoreguidelines-pro-type-union-access",
+    "-cppcoreguidelines-pro-bounds-pointer-arithmetic",
+    "-cppcoreguidelines-pro-type-vararg",
+    "google-build-using-namespace",
+    "google-explicit-constructor",
+    "google-global-names-in-headers",
+    "google-readability-casting",
+    "google-runtime-int",
+    "google-runtime-operator",
+    "hicpp-*",
+    "-hicpp-vararg",
+    "misc-*",
+    "modernize-*",
+    "performance-*",
+    "readability-*",
+    "-readability-named-parameter"
+  ],
+  "clang-tidy.buildPath": "build/debug/cmake",
+  "clang-tidy.fixOnSave": true,
+  "clang-tidy.lintOnSave": true,
+  "cmake.configureOnOpen": true,
+  "editor.rulers": [
+    80
+  ],
+  "editor.defaultFormatter": "xaver.clang-format",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "afterDelay",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "ninjabuild.ninjaBuildPath": "${APP_HOME}/build/debug/cmake",
+  "python.formatting.provider": "yapf"
+}

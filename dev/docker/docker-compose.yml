@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    image: ${BUILD_NAME}
+    volumes:
+      - "//var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 1G
+      restart_policy:
+        condition: on-failure
+        delay: 1s
+        window: 1s

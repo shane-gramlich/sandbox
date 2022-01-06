@@ -1,0 +1,19 @@
+{
+	"dockerComposeFile": ["../dev/docker/docker-compose.yml", "docker-compose.yml", "docker-compose.extended.yml"],
+	"extensions": [
+			"bierner.markdown-preview-github-styles",
+			"mwinters-stuff.ninjabuild",
+			"ms-azuretools.vscode-docker",
+			"ms-python.python",
+			"ms-vscode.cmake-tools",
+			"ms-vscode.cpptools",
+			"ms-vsliveshare.vsliveshare",
+			"notskm.clang-tidy",
+			"xaver.clang-format"
+	],
+	"initializeCommand": "python dev/update_env.py",
+	"name": "${APP_NAME_DISPLAY}",
+	"postAttachCommand": "python dev/update_env.py",
+	"service": "app",
+	"workspaceFolder": "/usr/src"
+}

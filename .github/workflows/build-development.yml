@@ -1,0 +1,50 @@
+# This script kicks off a build for every event excluding commits pushed to the
+# main branch. This includes pull requests and page builds to any branch.
+---
+name: Application (development)
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+  page_build:
+jobs:
+  build:
+    runs-on: ${{ matrix.env.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - name: linux
+            os: ubuntu-latest
+            ninja_platform: linux
+            qt_platform: linux
+            arch: linux-x86_64
+            cmake_env: {}
+          - name: mac
+            os: macos-latest
+            ninja_platform: mac
+            qt_platform: mac
+            arch: darwin64-x86_64-cc
+            cmake_env: {}
+          - name: win
+            os: windows-latest
+            ninja_platform: win
+            qt_platform: windows
+            arch: VC-WIN64A
+            cmake_env:
+              CC: cl
+              CXX: cl
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+...
